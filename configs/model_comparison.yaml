@@ -1,0 +1,56 @@
+- net_class: Transformer
+  feed_forward_dim: 128
+  num_attention_layers: 3
+  num_attention_heads: 8
+  run_name: transformer
+
+- net_class: GNN
+  gnn_layer_class: GCNConv
+  activation_function: tanh
+  edge_weights: False
+  run_name: gcn
+
+- net_class: GNN
+  gnn_layer_class: GATv2WConv
+  activation_function: tanh
+  edge_weights: False
+  run_name: gat
+
+- net_class: GNN
+  gnn_layer_class: GINEWConv
+  activation_function: tanh
+  edge_weights: False
+  run_name: gine
+
+# __________________________
+
+- net_class: GNN
+  gnn_layer_class: GCNConv
+  activation_function: tanh
+  run_name: gcn_weights
+
+- net_class: GNN
+  gnn_layer_class: GATv2WConv
+  activation_function: tanh
+  run_name: gat_weights
+
+- net_class: GNN
+  gnn_layer_class: GINEWConv
+  activation_function: tanh
+  run_name: gine_weights
+
+# __________________________
+
+- net_class: GNN
+  gnn_layer_class: GATv2WConv
+  activation_function: tanh
+  edge_embeddings: True
+  edge_weights: False
+  run_name: gat_edge_embs
+
+- net_class: GNN
+  gnn_layer_class: GINEWConv
+  activation_function: tanh
+  edge_embeddings: True
+  edge_weights: False
+  run_name: gine_edge_embs
